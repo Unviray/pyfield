@@ -1,31 +1,31 @@
 """
-Module to hold text field
+Module to hold integer field
 """
 
 from pyfield.field import Field
 
 
-class Text(Field):
+class Integer(Field):
     """
-    Text field
+    Integer field
 
-    >>> from pyfield import Text
-    >>> text = Text('First name')
-    >>> text('Jonatana')
-    >>> print(text.get)
-    Jonatana
+    >>> from pyfield import Integer
+    >>> age = Integer('age')
+    >>> age('18')
+    >>>print(age.get)
+    18
     """
 
     def __init__(self, name):
         self.name = name
-        self.hold = ''
+        self.hold = 0
 
     def __call__(self, _input):
         """
         Inject value
         """
 
-        self.hold = str(_input)
+        self.hold = int(_input)
 
     @property
     def get(self):

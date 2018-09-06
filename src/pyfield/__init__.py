@@ -6,10 +6,12 @@ Field collection for you form
 from pkg_resources import get_distribution, DistributionNotFound
 
 from pyfield.field.text import Text
+from pyfield.field.integer import Integer
 
 
 __all__ = (
-    'Text')
+    'Text',
+    'Integer')
 
 
 try:
