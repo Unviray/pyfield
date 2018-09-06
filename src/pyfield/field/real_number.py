@@ -1,31 +1,31 @@
 """
-Module to hold integer field
+Module to hold real number field
 """
 
 from pyfield.field import Field
 
 
-class Integer(Field):
+class RealNumber(Field):
     """
-    Integer field
+    Real number field
 
-    >>> from pyfield import Integer
-    >>> age = Integer('age')
-    >>> age('18')
-    >>> print(age.get)
-    18
+    >>> from pyfield import RealNumber
+    >>> heigth = RealNumber('heigth')
+    >>> heigth('1.85')
+    >>> print(heigth.get)
+    1.85
     """
 
     def __init__(self, name):
         self.name = name
-        self.hold = 0
+        self.hold = 0.0
 
     def __call__(self, _input):
         """
         Inject value
         """
 
-        self.hold = int(_input)
+        self.hold = float(_input)
 
     @property
     def get(self):

@@ -8,4 +8,13 @@ class Field(object):
     Base of all Field
     """
 
-    pass
+    def __init__(self):
+        self.hold = object
+
+    @property
+    def get(self):
+        """
+        Get holded value
+        """
+
+        return self.hold

@@ -1,11 +1,11 @@
 from pyfield import Integer
 
 
-def test_text():
-    text = Integer('age')
+def test_integer():
+    integer = Integer('age')
 
-    text('18')
-    assert text.get == 18
+    integer('18')
+    assert integer.get == 18
 
-    text(17)
-    assert text.get == 17
+    integer(17)
+    assert integer.get == 17
