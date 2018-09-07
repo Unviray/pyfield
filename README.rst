@@ -11,7 +11,7 @@ Description
 **pyfield** is a collection of field with battery included.
 
 This project is under developmment, please read
-`CONTIBUTING.rst <https://github.com/Ublimjo/pyfield/CONTRIBUTING.rst>`_
+`CONTIBUTING.rst <https://github.com/Ublimjo/pyfield/blob/master/CONTRIBUTING.rst>`_
 
 
 Note
