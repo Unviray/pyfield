@@ -8,7 +8,10 @@ Collection of field for your form
 Description
 ===========
 
-A longer description of your project goes here...
+**pyfield** is a collection of field with battery included.
+
+This project is under developmment, please read
+`CONTIBUTING.rst <https://github.com/Ublimjo/pyfield/CONTRIBUTING.rst>`_
 
 
 Note
