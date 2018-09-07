@@ -17,6 +17,8 @@ class Boolean(Field):
     """
 
     def __init__(self, name):
+        super(Boolean, self).__init__()
+
         self.name = name
         self.hold = False
 

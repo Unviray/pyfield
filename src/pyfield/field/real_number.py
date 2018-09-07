@@ -17,6 +17,8 @@ class RealNumber(Field):
     """
 
     def __init__(self, name):
+        super(RealNumber, self).__init__()
+
         self.name = name
         self.hold = 0.0
 

@@ -17,6 +17,8 @@ class Integer(Field):
     """
 
     def __init__(self, name):
+        super(Integer, self).__init__()
+
         self.name = name
         self.hold = 0
 

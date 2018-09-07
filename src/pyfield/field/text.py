@@ -17,6 +17,8 @@ class Text(Field):
     """
 
     def __init__(self, name):
+        super(Text, self).__init__()
+
         self.name = name
         self.hold = ''
 

@@ -11,6 +11,9 @@ class Field(object):
     def __init__(self):
         self.hold = object
 
+    def __call__(self, _input):
+        self.hold = _input
+
     @property
     def get(self):
         """
