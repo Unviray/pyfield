@@ -5,11 +5,12 @@ Field collection for you form
 
 from pkg_resources import get_distribution, DistributionNotFound
 
-from pyfield.field.text import Text
+from pyfield.field.boolean import Boolean
 from pyfield.field.integer import Integer
 from pyfield.field.real_number import RealNumber
+from pyfield.field.text import Text
 
-__all__ = ('Text', 'Integer', 'RealNumber')
+__all__ = ('Boolean', 'Integer', 'RealNumber', 'Text')
 
 try:
     DIST_NAME = __name__

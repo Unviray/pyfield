@@ -2,10 +2,10 @@ from pyfield import Integer
 
 
 def test_integer():
-    integer = Integer('age')
+    age = Integer('age')
 
-    integer('18')
-    assert integer.get == 18
+    age('18')
+    assert age.get == 18
 
-    integer(17)
-    assert integer.get == 17
+    age(17)
+    assert age.get == 17
