@@ -16,16 +16,24 @@ class Text(Field):
     Jonatana
     """
 
-    def __init__(self, name):
+    def __init__(self, name, **kwargs):
         super(Text, self).__init__()
 
         self.name = name
         self.hold = ''
 
+        self.transformator = kwargs.pop('transformator', [])
+
     def __call__(self, _input):
         """
         Inject value
         """
+
+        _input = str(_input)
+
+        # Apply transformation
+        for transf_call in self.transformator:
+            _input = transf_call(_input)
 
         self.hold = str(_input)
 

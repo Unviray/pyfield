@@ -16,16 +16,24 @@ class Boolean(Field):
     True
     """
 
-    def __init__(self, name):
+    def __init__(self, name, **kwargs):
         super(Boolean, self).__init__()
 
         self.name = name
         self.hold = False
 
+        self.transformator = kwargs.pop('transformator', [])
+
     def __call__(self, _input):
         """
         Inject value
         """
+
+        _input = bool(_input)
+
+        # Apply transformation
+        for transf_call in self.transformator:
+            _input = transf_call(_input)
 
         self.hold = bool(_input)
 

@@ -16,16 +16,24 @@ class RealNumber(Field):
     1.85
     """
 
-    def __init__(self, name):
+    def __init__(self, name, **kwargs):
         super(RealNumber, self).__init__()
 
         self.name = name
         self.hold = 0.0
 
+        self.transformator = kwargs.pop('transformator', [])
+
     def __call__(self, _input):
         """
         Inject value
         """
+
+        _input = float(_input)
+
+        # Apply transformation
+        for transf_call in self.transformator:
+            _input = transf_call(_input)
 
         self.hold = float(_input)
 
