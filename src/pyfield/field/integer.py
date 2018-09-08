@@ -17,19 +17,17 @@ class Integer(Field):
     """
 
     def __init__(self, name, **kwargs):
-        super(Integer, self).__init__()
+        super(Integer, self).__init__(name, **kwargs)
 
         self.name = name
         self.hold = 0
 
-        self.transformator = kwargs.pop('transformator', [])
+        self.transformator = kwargs.pop('transformator', [int])
 
     def __call__(self, _input):
         """
         Inject value
         """
-
-        _input = int(_input)
 
         # Apply transformation
         for transf_call in self.transformator:

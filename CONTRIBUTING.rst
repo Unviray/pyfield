@@ -5,7 +5,7 @@ Whether reporting bugs, discussing improvements and new ideas: Contributions to
 Pyfield are highly welcomed and appreciated! Here's how to get started:
 
 1. Check for open issues or open a fresh issue to start a discussion around a
-   feature idea, bug or typo error
+   feature idea or bug
 2. Fork `the repository <https://githuv.com/Ublimjo/pyfield/>`_ on GitHub,
    create a new branch off the `master` branch and start making your changes
    (known as 
@@ -28,12 +28,12 @@ If you can write a demonstration test that currently fails but should pass
 Branch
 ******
 
-Use `master` branch for:
+Use ``master`` branch for:
 
   - typo fix
   - small bug fix
 
-Use `develop` branch for:
+Use ``develop`` branch for:
 
   - big bug fix
   - small feature
@@ -54,7 +54,7 @@ In general the pyfield source should always follow
 axception concerning docstrings:
 
 when using multiline docstrings, keep the opening and closing triple quotes on
-their own lines and add an empty li'e after it. Using yapf is recommended.
+their own lines and add an empty line after it. Using yapf is recommended.
 
 .. code-block:: python
 

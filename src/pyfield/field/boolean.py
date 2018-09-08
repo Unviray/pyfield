@@ -17,19 +17,17 @@ class Boolean(Field):
     """
 
     def __init__(self, name, **kwargs):
-        super(Boolean, self).__init__()
+        super(Boolean, self).__init__(name, **kwargs)
 
         self.name = name
         self.hold = False
 
-        self.transformator = kwargs.pop('transformator', [])
+        self.transformator = kwargs.pop('transformator', [bool])
 
     def __call__(self, _input):
         """
         Inject value
         """
-
-        _input = bool(_input)
 
         # Apply transformation
         for transf_call in self.transformator:

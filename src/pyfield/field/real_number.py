@@ -17,25 +17,23 @@ class RealNumber(Field):
     """
 
     def __init__(self, name, **kwargs):
-        super(RealNumber, self).__init__()
+        super(RealNumber, self).__init__(name, **kwargs)
 
         self.name = name
         self.hold = 0.0
 
-        self.transformator = kwargs.pop('transformator', [])
+        self.transformator = kwargs.pop('transformator', [float])
 
     def __call__(self, _input):
         """
         Inject value
         """
 
-        _input = float(_input)
-
         # Apply transformation
         for transf_call in self.transformator:
             _input = transf_call(_input)
 
-        self.hold = float(_input)
+        self.hold = _input
 
     @property
     def get(self):

@@ -17,19 +17,17 @@ class Text(Field):
     """
 
     def __init__(self, name, **kwargs):
-        super(Text, self).__init__()
+        super(Text, self).__init__(name, **kwargs)
 
         self.name = name
         self.hold = ''
 
-        self.transformator = kwargs.pop('transformator', [])
+        self.transformator = kwargs.pop('transformator', [str])
 
     def __call__(self, _input):
         """
         Inject value
         """
-
-        _input = str(_input)
 
         # Apply transformation
         for transf_call in self.transformator:

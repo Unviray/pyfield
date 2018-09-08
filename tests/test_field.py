@@ -7,13 +7,14 @@ from pyfield import RealNumber
 
 
 def test_field():
-    field = Field()
+    field = Field('just a field',
+                  transformator=[str])
 
     field('string')
     assert field.get == 'string'
 
     field(34)
-    assert field.get == 34
+    assert field.get == '34'
 
 
 def test_text():
@@ -25,7 +26,7 @@ def test_text():
         return arg.replace(' ', '_')
 
     text = Text('test text',
-                transformator=[upper,unicoder])
+                transformator=[str, upper, unicoder])
 
     text('Username')
     assert text.get == 'USERNAME'
@@ -41,7 +42,7 @@ def test_boolean():
 
     stay = Boolean('Stay connected')
     revers = Boolean('rev',
-                     transformator=[revcall])
+                     transformator=[bool, revcall])
 
     stay(True)
     assert stay.get
@@ -65,7 +66,7 @@ def test_integer():
         return arg + arg
 
     age = Integer('age',
-                  transformator=[add2, mult])
+                  transformator=[int, add2, mult])
 
     age('18')
     assert age.get == 40
@@ -83,7 +84,7 @@ def test_real_number():
         return arg * 0.6
 
     real_number = RealNumber('heigth',
-                             transformator=[addl, mult])
+                             transformator=[float, addl, mult])
 
     real_number('12.5')
     assert 7.6 > real_number.get > 7.5
