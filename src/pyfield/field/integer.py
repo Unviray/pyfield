@@ -23,22 +23,3 @@ class Integer(Field):
         self.hold = 0
 
         self.transformator = kwargs.pop('transformator', [int])
-
-    def __call__(self, _input):
-        """
-        Inject value
-        """
-
-        # Apply transformation
-        for transf_call in self.transformator:
-            _input = transf_call(_input)
-
-        self.hold = int(_input)
-
-    @property
-    def get(self):
-        """
-        Get holded value
-        """
-
-        return self.hold

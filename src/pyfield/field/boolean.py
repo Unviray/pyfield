@@ -12,7 +12,7 @@ class Boolean(Field):
     >>> from pyfield import Boolean
     >>> stay = Boolean('stay connected')
     >>> stay(True)
-    >>> print(stay)
+    >>> print(stay.get)
     True
     """
 
@@ -23,22 +23,3 @@ class Boolean(Field):
         self.hold = False
 
         self.transformator = kwargs.pop('transformator', [bool])
-
-    def __call__(self, _input):
-        """
-        Inject value
-        """
-
-        # Apply transformation
-        for transf_call in self.transformator:
-            _input = transf_call(_input)
-
-        self.hold = bool(_input)
-
-    @property
-    def get(self):
-        """
-        Get holded value
-        """
-
-        return self.hold
