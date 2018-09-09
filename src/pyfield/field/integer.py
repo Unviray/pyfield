@@ -22,4 +22,4 @@ class Integer(Field):
         self.name = name
         self.hold = 0
 
-        self.transformator = kwargs.pop('transformator', [int])
+        self.transformator = [int] + kwargs.pop('transformator', [])

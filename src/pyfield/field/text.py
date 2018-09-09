@@ -22,4 +22,4 @@ class Text(Field):
         self.name = name
         self.hold = ''
 
-        self.transformator = kwargs.pop('transformator', [str])
+        self.transformator = [str] + kwargs.pop('transformator', [])

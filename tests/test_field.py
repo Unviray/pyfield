@@ -26,7 +26,7 @@ def test_text():
         return arg.replace(' ', '_')
 
     text = Text('test text',
-                transformator=[str, upper, unicoder])
+                transformator=[upper, unicoder])
 
     text('Username')
     assert text.get == 'USERNAME'
@@ -42,7 +42,7 @@ def test_boolean():
 
     stay = Boolean('Stay connected')
     revers = Boolean('rev',
-                     transformator=[bool, revcall])
+                     transformator=[revcall])
 
     stay(True)
     assert stay.get
@@ -66,7 +66,7 @@ def test_integer():
         return arg + arg
 
     age = Integer('age',
-                  transformator=[int, add2, mult])
+                  transformator=[add2, mult])
 
     age('18')
     assert age.get == 40
@@ -84,7 +84,7 @@ def test_real_number():
         return arg * 0.6
 
     real_number = RealNumber('heigth',
-                             transformator=[float, addl, mult])
+                             transformator=[addl, mult])
 
     real_number('12.5')
     assert 7.6 > real_number.get > 7.5

@@ -22,4 +22,4 @@ class RealNumber(Field):
         self.name = name
         self.hold = 0.0
 
-        self.transformator = kwargs.pop('transformator', [float])
+        self.transformator = [float] + kwargs.pop('transformator', [])

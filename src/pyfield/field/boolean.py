@@ -22,4 +22,4 @@ class Boolean(Field):
         self.name = name
         self.hold = False
 
-        self.transformator = kwargs.pop('transformator', [bool])
+        self.transformator = [bool] + kwargs.pop('transformator', [])
