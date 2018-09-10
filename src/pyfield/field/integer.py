@@ -23,3 +23,4 @@ class Integer(Field):
         self.hold = 0
 
         self.transformator = [int] + kwargs.pop('transformator', [])
+        self.validator = kwargs.pop('validator', [])

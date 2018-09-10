@@ -1,4 +1,8 @@
+import pytest
+
 from pyfield import RealNumber
+
+from pyfield.error import InvalidError
 
 
 def test_real_number():
@@ -9,11 +13,24 @@ def test_real_number():
     def mult(arg):
         return arg * 0.6
 
-    real_number = RealNumber('heigth',
-                             transformator=[addl, mult])
+    def maximum(arg):
+        if arg > 30.0:
+            raise InvalidError('More than 30.0')
+
+    def minimum(arg):
+        if arg < 5.0:
+            raise InvalidError('Less than 5.0')
+
+    real_number = RealNumber('volume',
+                             transformator=[addl, mult],
+                             validator=[maximum, minimum])
 
     real_number('12.5')
     assert 7.6 > real_number.get > 7.5
 
     real_number(33.25)
     assert real_number.get == 19.968
+
+    with pytest.raises(InvalidError):
+        real_number(46.3)
+        real_number('2.5')

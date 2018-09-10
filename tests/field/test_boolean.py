@@ -2,19 +2,22 @@ from pyfield import Boolean
 
 
 def test_boolean():
-
-    def revcall(arg):
-        return not arg
-
     stay = Boolean('Stay connected')
-    revers = Boolean('rev',
-                     transformator=[revcall])
 
     stay(True)
     assert stay.get
 
     stay(False)
     assert not stay.get
+
+
+def test_rev():
+
+    def revcall(arg):
+        return not arg
+
+    revers = Boolean('rev',
+                     transformator=[revcall])
 
     revers(True)
     assert not revers.get

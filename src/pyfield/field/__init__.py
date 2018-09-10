@@ -13,6 +13,7 @@ class Field(object):
         self.hold = object
 
         self.transformator = kwargs.pop('transformator', [])
+        self.validator = kwargs.pop('validator', [])
 
     def __call__(self, _input):
         """
@@ -22,6 +23,10 @@ class Field(object):
         # Apply transformation
         for transf_call in self.transformator:
             _input = transf_call(_input)
+
+        # check validity
+        for valida_call in self.validator:
+            valida_call(_input)
 
         self.hold = _input
 
