@@ -23,3 +23,9 @@ class Boolean(Field):
         self.hold = False
 
         self.transformator = [bool] + kwargs.pop('transformator', [])
+
+        try:
+            # __call__
+            self.default = self(kwargs.pop('default'))
+        except KeyError:
+            pass

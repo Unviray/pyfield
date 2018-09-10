@@ -17,7 +17,10 @@ def test_rev():
         return not arg
 
     revers = Boolean('rev',
+                     default=False,
                      transformator=[revcall])
+
+    assert revers.get
 
     revers(True)
     assert not revers.get

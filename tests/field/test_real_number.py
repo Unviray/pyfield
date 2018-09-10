@@ -6,6 +6,16 @@ from pyfield.error import InvalidError
 
 
 def test_real_number():
+    heigth = RealNumber('heigth')
+
+    heigth(3.5)
+    assert heigth.get == 3.5
+
+    heigth('34.6') # str
+    assert heigth.get == 34.6 # float
+
+
+def test_real_number_complex():
 
     def addl(arg):
         return arg + 0.03
@@ -22,8 +32,11 @@ def test_real_number():
             raise InvalidError('Less than 5.0')
 
     real_number = RealNumber('volume',
+                             default=20.3,
                              transformator=[addl, mult],
                              validator=[maximum, minimum])
+
+    assert real_number.get == 12.198
 
     real_number('12.5')
     assert 7.6 > real_number.get > 7.5

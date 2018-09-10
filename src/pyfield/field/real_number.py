@@ -23,3 +23,9 @@ class RealNumber(Field):
         self.hold = 0.0
 
         self.transformator = [float] + kwargs.pop('transformator', [])
+
+        try:
+            # __call__
+            self.default = self(kwargs.pop('default'))
+        except KeyError:
+            pass

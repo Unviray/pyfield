@@ -15,6 +15,12 @@ class Field(object):
         self.transformator = kwargs.pop('transformator', [])
         self.validator = kwargs.pop('validator', [])
 
+        try:
+            # __call__
+            self.default = self(kwargs.pop('default'))
+        except KeyError:
+            pass
+
     def __call__(self, _input):
         """
         Inject value

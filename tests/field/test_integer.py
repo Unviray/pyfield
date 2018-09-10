@@ -6,6 +6,16 @@ from pyfield.error import InvalidError
 
 
 def test_integer():
+    number = Integer('number')
+
+    number(45)
+    assert number.get == 45
+
+    number('33') # str
+    assert number.get == 33
+
+
+def test_integer_complex():
 
     def add2(arg):
         return arg + 2
@@ -22,8 +32,11 @@ def test_integer():
             raise InvalidError('Too young')
 
     age = Integer('age',
+                  default=16,
                   transformator=[add2, mult],
                   validator=[maximum, minimum])
+
+    assert age.get == 36
 
     age('18')
     assert age.get == 40
