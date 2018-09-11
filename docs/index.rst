@@ -2,40 +2,51 @@
 pyfield
 =======
 
+Collection of field for your form **not** *only web form*
+
+
+Description
+===========
+
+**pyfield** is a collection of field with battery included.
+
+This project is under developmment, please read
+`CONTIBUTING.rst <https://github.com/Ublimjo/pyfield/blob/master/CONTRIBUTING.rst>`_
+
+
+Example
+=======
+
+.. code-block:: python
+
+ >>> from pyfield import Text
+ >>>
+ >>> def main():
+ >>>     username = Text('Username')
+ >>>     username(input(username.prompt_input()))
+ >>>     print(f'Your name is {username.get}')
+ >>>
+ >>> main()
+  Username: Bob
+ Your name is Bob
+
+It's very simple but pyfield comes with a lot of features
+
+ - Default value
+ - Transformator
+ - Validator
+
+Read the docs if you want to know more about these features or create your own
+Transformator and validator
+
+
+Note
+====
+
+This project has been set up using PyScaffold 3.0.3. For details and usage
+information on PyScaffold see http://pyscaffold.org/.
+
 This is the documentation of **pyfield**.
-
-.. note::
-
-    This is the main page of your project's `Sphinx <http://sphinx-doc.org/>`_
-    documentation. It is formatted in `reStructuredText
-    <http://sphinx-doc.org/rest.html>`__. Add additional pages by creating
-    rst-files in ``docs`` and adding them to the `toctree
-    <http://sphinx-doc.org/markup/toctree.html>`_ below. Use then
-    `references <http://sphinx-doc.org/markup/inline.html>`__ in order to link
-    them from this page, e.g. :ref:`authors <authors>` and :ref:`changes`.
-
-    It is also possible to refer to the documentation of other Python packages
-    with the `Python domain syntax
-    <http://sphinx-doc.org/domains.html#the-python-domain>`__. By default you
-    can reference the documentation of `Sphinx <http://sphinx.pocoo.org>`__,
-    `Python <http://docs.python.org/>`__, `NumPy
-    <http://docs.scipy.org/doc/numpy>`__, `SciPy
-    <http://docs.scipy.org/doc/scipy/reference/>`__, `matplotlib
-    <http://matplotlib.sourceforge.net>`__, `Pandas
-    <http://pandas.pydata.org/pandas-docs/stable>`__, `Scikit-Learn
-    <http://scikit-learn.org/stable>`__. You can add more by
-    extending the ``intersphinx_mapping`` in your Sphinx's ``conf.py``.
-
-    The pretty useful extension `autodoc
-    <http://www.sphinx-doc.org/en/stable/ext/autodoc.html>`__ is activated by
-    default and lets you include documentation from docstrings. Docstrings can
-    be written in `Google
-    <http://google.github.io/styleguide/pyguide.html#Comments>`__
-    (recommended!), `NumPy
-    <https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt>`__
-    and `classical
-    <http://www.sphinx-doc.org/en/stable/domains.html#info-field-lists>`__
-    style.
 
 
 Contents
