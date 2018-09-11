@@ -19,7 +19,7 @@ class Field(object):
             # __call__
             self.default = self(kwargs.pop('default'))
         except KeyError:
-            pass
+            self.default = None
 
     def __call__(self, _input):
         """
@@ -35,6 +35,17 @@ class Field(object):
             valida_call(_input)
 
         self.hold = _input
+        return _input
+
+    def prompt_input(self):
+        """
+        Build prompt for input
+        """
+
+        if self.default == None:
+            return f' {self.name}: '
+        else:
+            return f' {self.name} [{self.default}]: '
 
     @property
     def get(self):
