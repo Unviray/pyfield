@@ -2,6 +2,16 @@
 Changelog
 =========
 
+0.1.0 / 2018-09-12
+==================
+
+  * Remove py2 support
+  * fill up changelog
+  * fill README and docs
+  * add prompt_input
+  * add builtin email validator
+  * add expynent requirement
+
 0.0.2 / 2018-09-10
 ==================
 
