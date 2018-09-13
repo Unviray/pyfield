@@ -23,9 +23,3 @@ class Text(Field):
         self.hold = ''
 
         self.transformator = [str] + kwargs.pop('transformator', [])
-
-        try:
-            # __call__
-            self.default = self(kwargs.pop('default'))
-        except KeyError:
-            pass
