@@ -5,7 +5,7 @@ python:
 matrix:
   include:
     - python: "3.6"
-      env: TOXENV=check
+      env: TOXENV=py36
 
 install: pip install tox tox-travis setuptools_scm
 script: tox
