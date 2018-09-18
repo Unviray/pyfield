@@ -11,6 +11,7 @@ expynent = "1.0"
 pyscaffold = "^3.1"
 
 [tool.poetry.dev-dependencies]
+pylint = "*"
 pytest = "^3.8"
 pytest-cov = "^2.6"
 icecream = "^1.3"
