@@ -3,6 +3,7 @@ Module to hold text field
 """
 
 from pyfield.field import Field
+from pyfield.error import InvalidError
 
 
 class Text(Field):
@@ -21,8 +22,16 @@ class Text(Field):
 
         self.name = name
         self.hold = ''
+        self.base = kwargs.pop('base', str)
 
-        self.transformator = [str] + kwargs.pop('transformator', [])
+        def valid_str(arg):
+            if not isinstance(self.base):
+                typebase = type(self.base)
+                typearg = type(arg)
+                raise InvalidError(f'Input must be {typebase} not {typearg}')
+
+        self.transformator = [self.base] + kwargs.pop('transformator', [])
+        self.validator = [valid_str] + kwargs.pop('validator', [])
 
         try:
             # __call__

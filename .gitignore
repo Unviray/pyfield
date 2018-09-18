@@ -111,4 +111,5 @@ venv.bak/
 # doit
 .doit.db
 
-Pipfile.lock
+# vim file
+.sw[po]
