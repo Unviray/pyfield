@@ -12,8 +12,8 @@ def test_text_email():
     email('very.common@example.com')
     assert email.get == 'very.common@example.com'
 
-    email('Indeed@Strange.COM')
-    assert email.get == 'Indeed@Strange.COM'
+    email('Indeed@strange.com')
+    assert email.get == 'Indeed@strange.com'
 
     email('user.name+tag+sorting@example.com')
     assert email.get == 'user.name+tag+sorting@example.com'
