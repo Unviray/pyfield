@@ -1,4 +1,7 @@
+import pytest
+
 from pyfield import Boolean
+from pyfield.error import InvalidError
 
 
 def test_boolean():
@@ -27,3 +30,9 @@ def test_rev():
 
     revers(False)
     assert revers.get
+
+    # remove bool transformation
+    revers.transformator = []
+
+    with pytest.raises(InvalidError):
+        revers('hello')

@@ -17,3 +17,6 @@ try:
     __version__ = get_distribution(DIST_NAME).version
 except DistributionNotFound:  # pragma: no cover
     __version__ = 'unknown'
+finally:
+    del get_distribution
+    del DistributionNotFound

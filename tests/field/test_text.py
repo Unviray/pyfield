@@ -48,7 +48,7 @@ def test_text_complex():
         text('Too long long long text')
         text('s')
 
-    # remove str transforotion
+    # remove str transformation
     text.transformator = []
 
     with pytest.raises(InvalidError):

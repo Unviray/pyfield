@@ -24,6 +24,8 @@ class Field(object):
     def __call__(self, _input):
         """
         Inject value
+
+        ex: email('alice@gmail.com')
         """
 
         # Apply transformation
@@ -40,9 +42,11 @@ class Field(object):
     def prompt_input(self):
         """
         Build prompt for input
+
+        ex: Would you like to exit [yes|no]:
         """
 
-        if self.default == None:
+        if self.default is None:
             return f' {self.name}: '
         else:
             return f' {self.name} [{self.default}]: '
