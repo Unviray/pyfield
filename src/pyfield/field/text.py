@@ -25,7 +25,7 @@ class Text(Field):
         self.base = kwargs.pop('base', str)
 
         def valid_str(arg):
-            if not isinstance(self.base):
+            if not isinstance(arg, self.base):
                 typebase = type(self.base)
                 typearg = type(arg)
                 raise InvalidError(f'Input must be {typebase} not {typearg}')

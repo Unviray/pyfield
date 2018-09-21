@@ -11,20 +11,20 @@ def test_test():
     text('good')
     assert text.get == 'good'
 
-    text(34) # int
-    assert text.get == '34' # str
+    text(34)  # int
+    assert text.get == '34'  # str
 
 
 def test_text_complex():
 
-    ## Transformator ##
+    # Transformator #
     def upper(arg):
         return arg.upper()
 
     def unicoder(arg):
         return arg.replace(' ', '_')
 
-    ## Validator ##
+    # Validator #
     def length(arg):
         if len(arg) > 20:
             raise InvalidError('More than 20 char')
@@ -47,3 +47,9 @@ def test_text_complex():
     with pytest.raises(InvalidError):
         text('Too long long long text')
         text('s')
+
+    # remove str transforotion
+    text.transformator = []
+
+    with pytest.raises(InvalidError):
+        text(45678910)
