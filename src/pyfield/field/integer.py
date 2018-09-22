@@ -3,6 +3,7 @@ Module to hold integer field
 """
 
 from pyfield.field import Field
+from pyfield.validator import valid_type
 
 
 class Integer(Field):
@@ -20,13 +21,14 @@ class Integer(Field):
         super(Integer, self).__init__(name, **kwargs)
 
         self.name = name
-        self.hold = 0
+        self.hold = int()
+        self.base = kwargs.pop('base', int)
 
-        self.transformator = [int] + kwargs.pop('transformator', [])
-        self.validator = kwargs.pop('validator', [])
+        self.transformator = [self.base] + kwargs.pop('transformator', [])
+        self.validator = [valid_type(self.base)] + kwargs.pop('validator', [])
 
         try:
             # __call__
             self.default = self(kwargs.pop('default'))
         except KeyError:
-            pass
+            self.default = None

@@ -3,7 +3,7 @@ Module to hold text field
 """
 
 from pyfield.field import Field
-from pyfield.error import InvalidError
+from pyfield.validator import valid_type
 
 
 class Text(Field):
@@ -21,17 +21,11 @@ class Text(Field):
         super(Text, self).__init__(name, **kwargs)
 
         self.name = name
-        self.hold = ''
+        self.hold = str()
         self.base = kwargs.pop('base', str)
 
-        def valid_str(arg):
-            if not isinstance(arg, self.base):
-                typebase = type(self.base)
-                typearg = type(arg)
-                raise InvalidError(f'Input must be {typebase} not {typearg}')
-
         self.transformator = [self.base] + kwargs.pop('transformator', [])
-        self.validator = [valid_str] + kwargs.pop('validator', [])
+        self.validator = [valid_type(self.base)] + kwargs.pop('validator', [])
 
         try:
             # __call__

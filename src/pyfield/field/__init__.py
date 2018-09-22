@@ -10,7 +10,8 @@ class Field(object):
 
     def __init__(self, name, **kwargs):
         self.name = name
-        self.hold = object
+        self.hold = object()
+        self.base = kwargs.pop('base', object())
 
         self.transformator = kwargs.pop('transformator', [])
         self.validator = kwargs.pop('validator', [])

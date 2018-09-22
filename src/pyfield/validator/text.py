@@ -9,6 +9,10 @@ from pyfield.error import InvalidError
 
 
 def is_email_addr(arg):
+    """
+    Check if arg is an email
+    """
+
     email_pattern = patterns.EMAIL_ADDRESS
 
     if not re.match(email_pattern, arg):
