@@ -4,31 +4,20 @@
 Setup file for pyfield.
 """
 
+from os import path
 import sys
 from setuptools import setup, find_packages
 
+here = path.abspath(path.dirname(__file__))
 
-def setup_package():
-    needs_sphinx = {'build_sphinx', 'upload_docs'}.intersection(sys.argv)
-    sphinx = ['sphinx'] if needs_sphinx else []
-    setup(setup_requires=['pyscaffold>=3.0'] + sphinx,
-          entry_points=entry_points,
-          use_pyscaffold=True)
-
+# long_description
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+    long_description = f.read()
 
 def main():
-
-    from os import path
-
-    here = path.abspath(path.dirname(__file__))
-
-    # long_description
-    with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
-        long_description = f.read()
-
     setup(
         name='pyfield',
-        version='0.1.1',
+        version='0.1.2',
         description='Collection of field for your form',
         license='MIT',
         long_description=long_description,
