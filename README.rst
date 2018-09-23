@@ -43,8 +43,3 @@ Read the docs if you want to know more about these features or create your own
 Transformator and validator
 
 
-Note
-====
-
-This project has been set up using PyScaffold 3.0.3. For details and usage
-information on PyScaffold see http://pyscaffold.org/.
