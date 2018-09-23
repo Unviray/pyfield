@@ -2,6 +2,9 @@
 pyfield
 =======
 
+.. image:: https://travis-ci.org/Ublimjo/pyfield.svg?branch=master
+    :target: https://travis-ci.org/Ublimjo/pyfield
+
 Collection of field for your form **not** *only web form*
 
 
