@@ -8,7 +8,8 @@ Collection of field for your form **not** *only web form*
 Description
 ===========
 
-**pyfield** is a collection of field with battery included.
+**pyfield** is a collection of field with battery included. pyfield is focused more
+on console forms.
 
 This project is under developmment, please read
 `CONTIBUTING.rst <https://github.com/Ublimjo/pyfield/blob/master/CONTRIBUTING.rst>`_
@@ -35,18 +36,6 @@ It's very simple but pyfield comes with a lot of features
  - Default value
  - Transformator
  - Validator
-
-Read the docs if you want to know more about these features or create your own
-Transformator and validator
-
-
-Note
-====
-
-This project has been set up using PyScaffold 3.0.3. For details and usage
-information on PyScaffold see http://pyscaffold.org/.
-
-This is the documentation of **pyfield**.
 
 
 Contents
