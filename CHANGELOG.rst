@@ -2,6 +2,12 @@
 Changelog
 =========
 
+0.1.2 / 2018-09-23
+==================
+
+  * add builtin validator
+  * add example in docs
+
 0.1.0 / 2018-09-12
 ==================
 
