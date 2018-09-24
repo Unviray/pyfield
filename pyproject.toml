@@ -8,10 +8,9 @@ license = "mit"
 [tool.poetry.dependencies]
 python = "*"
 expynent = "1.0"
-pyscaffold = "^3.1"
 
 [tool.poetry.dev-dependencies]
-pylint = "*"
+pylint = { version = "*", python = "~2.7" }
 pytest = "^3.8"
 pytest-cov = "^2.6"
 icecream = "^1.3"
