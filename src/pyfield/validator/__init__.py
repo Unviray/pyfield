@@ -12,7 +12,8 @@ def valid_type(check_type=object):
 
     def warped(to_valid):
         """
-        This isn't a decorator but a function returned for execute in validator
+        This isn't a decorator but a function
+        returned and executed in validator
         """
 
         if not isinstance(to_valid, check_type):
