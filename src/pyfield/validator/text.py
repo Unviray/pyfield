@@ -7,6 +7,29 @@ import re
 from pyfield.error import InvalidError
 
 
+def is_credit_card(arg):
+    """
+    Check if arg is an credit card
+    """
+
+    credit_card_pattern = r'^(\d{4}[-\s]?){3}\d{4}$'
+
+    if not re.match(credit_card_pattern, arg):
+        raise InvalidError('Invalid Credit card')
+
+
+def is_credit_card_strict(arg):
+    """
+    Strict check if arg is an credit card
+    """
+
+    credit_card_strict_pattern = r'^((\d{4}){3}|(\d{4}-){3}|(\d{4}\s)\
+        {3})\d{4}$'
+
+    if not re.match(credit_card_strict_pattern, arg):
+        raise InvalidError('Invalid Credit card')
+
+
 def is_email_addr(arg):
     """
     Check if arg is an email
@@ -17,3 +40,15 @@ def is_email_addr(arg):
 
     if not re.match(email_pattern, arg):
         raise InvalidError('Invalid Email')
+
+
+def is_ipv4(arg):
+    """
+    Check if art is an ipv4
+    """
+
+    bit = r"([01]?\d{1,2}|2(5[0-5]|[0-4]\d))"
+    ipv4_pattern = rf"^{bit}\.{bit}\.{bit}\.{bit}$"
+
+    if not re.match(ipv4_pattern, arg):
+        raise InvalidError('Invalid ipv4')
