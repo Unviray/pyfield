@@ -7,6 +7,7 @@ from pyfield.validator.text import is_credit_card
 from pyfield.validator.text import is_credit_card_strict
 from pyfield.validator.text import is_email_addr
 from pyfield.validator.text import is_ipv4
+from pyfield.validator.text import is_mac_addr
 
 
 def test_text_credit_card():
@@ -102,7 +103,7 @@ def test_text_email():
         email('john.doe@example..com')
 
 
-def test_text_text_ipv4():
+def test_text_ipv4():
     ipv4 = Text('ipv4',
                 validator=[is_ipv4])
 
@@ -133,3 +134,14 @@ def test_text_text_ipv4():
         if not result:
             with pytest.raises(InvalidError):
                 ipv4(ip)
+
+
+def test_text_mac_addr():
+    mac = Text('mac',
+               validator=[is_mac_addr])
+
+    mac('00:08:C7:1B:8C:02')
+    assert mac.get == '00:08:C7:1B:8C:02'
+
+    with pytest.raises(InvalidError):
+        mac('48:H2:01:V6:00')
