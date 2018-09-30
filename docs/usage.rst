@@ -16,16 +16,19 @@ The example here is to show how to build basic form
  # for password
  from getpass import getpass
 
+ # create all field object
  username = Text('Username')
  email = Text('Email')
  age = Integer('Age')
  password = Text('Password')
 
+ # get value by asking user from input or getpass on password
  username(input(username.prompt_input()))
  email(input(email.prompt_input()))
  password(getpass(password.prompt_input()))
  age(input(age.prompt_input()))
 
+ # print result
  print('----------------------------')
  print(f'Your name is {username.get}')
  print(f'Your email address is {email.get}')
@@ -75,14 +78,13 @@ validator.
          raise InvalidError('You are too old')
 
 
- username = Text('Username',
-                 transformator=[unicoder, trans_name], )
- email = Text('Email',
-              validator=[is_email_addr], )
- age = Integer('Age',
-               validator=[normal_age], )
- password = Text('Password',
-                 transformator=[hasher], )
+ # create all field object with transformator and validator
+ # transformator and validator are defined above but some validator is from builting
+ # ex: is_email_addr
+ username = Text('Username', transformator=[unicoder, trans_name], )
+ email    = Text('Email',    validator=[is_email_addr], )
+ age      = Integer('Age',   validator=[normal_age], )
+ password = Text('Password', transformator=[hasher], )
 
  try:
      username(input(username.prompt_input()))
