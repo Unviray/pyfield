@@ -19,7 +19,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 def main():
     setup(
         name='pyfield',
-        version='0.1.2',
+        version='0.1.3',
         description='Collection of field for your form',
         license='MIT',
         long_description=long_description,

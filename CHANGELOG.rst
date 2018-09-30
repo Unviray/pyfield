@@ -2,6 +2,14 @@
 Changelog
 =========
 
+0.1.3 / 2018-09-30
+==================
+
+  * add more validator
+    - ipv4 validator
+    - mac addres validator
+    - credit card validator
+
 0.1.2 / 2018-09-23
 ==================
 
