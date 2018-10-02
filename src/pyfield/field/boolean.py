@@ -3,7 +3,6 @@ Module to hold boolean field
 """
 
 from pyfield.field import Field
-from pyfield.validator import valid_type
 
 
 class Boolean(Field):
@@ -24,11 +23,4 @@ class Boolean(Field):
         self.hold = bool()
         self.base = kwargs.pop('base', bool)
 
-        self.transformator = [self.base] + kwargs.pop('transformator', [])
-        self.validator = [valid_type(self.base)] + kwargs.pop('validator', [])
-
-        try:
-            # __call__
-            self.default = self(kwargs.pop('default'))
-        except KeyError:
-            self.default = None
+        self.set_up(**kwargs)

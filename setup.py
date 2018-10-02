@@ -9,6 +9,7 @@ from os import path
 
 from setuptools import setup, find_packages
 
+
 here = path.abspath(path.dirname(__file__))
 
 # long_description
@@ -44,5 +45,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # setup_package()
     main()

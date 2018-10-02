@@ -2,6 +2,8 @@
 All field are stored here
 """
 
+from pyfield.validator import valid_type
+
 
 class Field(object):
     """
@@ -15,6 +17,20 @@ class Field(object):
 
         self.transformator = kwargs.pop('transformator', [])
         self.validator = kwargs.pop('validator', [])
+
+        try:
+            # __call__
+            self.default = self(kwargs.pop('default'))
+        except KeyError:
+            self.default = None
+
+    def set_up(self, **kwargs):
+        """
+        get all transformator and validator from kwargs
+        """
+
+        self.transformator = [self.base] + kwargs.pop('transformator', [])
+        self.validator = [valid_type(self.base)] + kwargs.pop('validator', [])
 
         try:
             # __call__
