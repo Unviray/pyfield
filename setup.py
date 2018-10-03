@@ -34,7 +34,7 @@ def main():
             'License :: OSI Approved :: MIT License',
             'Programming Language :: Python :: 3.6',
             'Topic :: Terminals',
-            'Topic :: Text Processing :: Filtersk',
+            'Topic :: Text Processing :: Filters',
             'Topic :: Utilities', ],
         keywords='field form validator',
         packages=find_packages(where='src'),
