@@ -17,6 +17,24 @@ This project is under developmment, please read
 `CONTIBUTING.rst <https://github.com/Ublimjo/pyfield/blob/master/CONTRIBUTING.rst>`_
 
 
+Installation
+============
+
+From pypi
+---------
+
+``pip install pyfield``
+
+From source
+-----------
+
+.. code-block:: bash
+
+ $ git clone https://github.com/Ublimjo/pyfield
+ $ cd pyfield/
+ $ python setup.py install
+
+
 Example
 =======
 
