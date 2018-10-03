@@ -44,7 +44,7 @@ def is_ipv4(arg):
     Check if arg is an ipv4
     """
     bit = r"([01]?\d{1,2}|2(5[0-5]|[0-4]\d))"
-    ipv4_pattern = rf"^{bit}\.{bit}\.{bit}\.{bit}$"
+    ipv4_pattern = r"^{0}\.{0}\.{0}\.{0}$".format(bit)
 
     if not re.match(ipv4_pattern, arg):
         raise InvalidError('Invalid ipv4')

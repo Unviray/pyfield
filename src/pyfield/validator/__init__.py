@@ -19,6 +19,7 @@ def valid_type(check_type=object):
         if not isinstance(to_valid, check_type):
             typebase = type(check_type)
             typearg = type(to_valid)
-            raise InvalidError(f'Input must be {typebase} not {typearg}')
+            raise InvalidError('Input must be {} not {}'.format(
+                typebase, typearg))
 
     return warped

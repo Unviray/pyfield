@@ -4,6 +4,8 @@ version = "0.1.3"
 description = "Collection of field for your form"
 authors = ["Ublim <ublimjo@gmail.com>"]
 license = "mit"
+readme = "README.rst"
+homepage = "https://github.com/Ublimjo/pyfield"
 
 [tool.poetry.dependencies]
 python = "*"

@@ -64,9 +64,9 @@ class Field(object):
         """
 
         if self.default is None:
-            return f' {self.name}: '
+            return ' {}: '.format(self.name)
         else:
-            return f' {self.name} [{self.default}]: '
+            return ' {} [{}]: '.format(self.name, self.default)
 
     @property
     def get(self):
