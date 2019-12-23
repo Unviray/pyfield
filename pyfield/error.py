@@ -7,4 +7,3 @@ class InvalidError(ValueError):
     """
     Raised when validator fails
     """
-    pass

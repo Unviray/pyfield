@@ -50,6 +50,8 @@ validator.
 
  from pyfield.validator.text import is_email_addr
 
+ from pyfield.error import InvalidError
+
  # for password
  import hashlib
  from getpass import getpass

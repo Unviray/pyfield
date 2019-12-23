@@ -59,5 +59,3 @@ It's very simple but pyfield comes with a lot of features
 
 Read the docs if you want to know more about these features or create your own
 Transformator and validator
-
-
