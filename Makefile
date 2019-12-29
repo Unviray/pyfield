@@ -9,3 +9,13 @@ doc:
 	@echo Building docs
 	$(MAKE) -C docs html
 	@echo
+
+
+test:
+	@echo Testing
+	pipenv run pytest
+	@echo
+
+	@echo Linting
+	pipenv run pylint pyfield
+	@echo
